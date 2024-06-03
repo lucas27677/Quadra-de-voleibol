@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=landscape">
+    <title>Quadra de Voleibol</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #75e6c0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .quadra-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .quadra {
+            position: relative;
+            width: 90vw; /* 90% of viewport width to fit on screen */
+            height: 45vw; /* Maintain the 2:1 ratio */
+            max-width: 360px;
+            max-height: 180px;
+            background-color: #1E90FF;
+            border: 2px solid #000;
+        }
+        .linha-meio {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FFF;
+        }
+        .area-ataque {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 30%; /* 30% of the width for 3m each side */
+            border-left: 2px dashed #FFF;
+            border-right: 2px dashed #FFF;
+        }
+        .area-ataque.esquerda {
+            left: 25%;
+        }
+        .area-ataque.direita {
+            right: 25%;
+        }
+        .area-defesa {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 40%; /* 40% of the width for 6m each side */
+            border-left: 2px solid #FFF;
+            border-right: 2px solid #FFF;
+        }
+        .area-defesa.esquerda {
+            left: 0;
+        }
+        .area-defesa.direita {
+            right: 0;
+        }
+        .net {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #FFA500;
+            transform: translateY(-50%);
+        }
+        .medida-horizontal {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 4vw; /* Responsive font size */
+            color: #000;
+        }
+        .medida-vertical {
+            position: absolute;
+            top: 50%;
+            left: -35px;
+            transform: translateY(-50%);
+            font-size: 4vw; /* Responsive font size */
+            color: #000;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .medida-area-ataque {
+            position: absolute;
+            top: -20px;
+            font-size: 3vw; /* Responsive font size */
+            color: #d81414;
+            text-align: center;
+            width: 30%;
+        }
+        .medida-area-ataque.esquerda {
+            left: 15%;
+        }
+        .medida-area-ataque.direita {
+            right: 15%;
+        }
+        .medida-area-defesa {
+            position: absolute;
+            top: -20px;
+            font-size: 3vw; /* Responsive font size */
+            color: #1a7ea3;
+            text-align: center;
+            width: 40%;
+        }
+        .medida-area-defesa.esquerda {
+            left: 5%;
+        }
+        .medida-area-defesa.direita {
+            right: 5%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 4vw; /* Responsive font size */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quadra de Voleibol:</h1>
+    <div class="quadra-container">
+        <div class="quadra">
+            <div class="linha-meio"></div>
+            <div class="net"></div>
+            <div class="area-ataque esquerda">
+                <div class="medida-area-ataque esquerda"><strong>3m</strong></div>
+            </div>
+            <div class="area-ataque direita">
+                <div class="medida-area-ataque direita"><strong>3m</strong></div>
+            </div>
+            <div class="area-defesa esquerda">
+                <div class="medida-area-defesa esquerda"><strong>6m</strong></div>
+            </div>
+            <div class="area-defesa direita">
+                <div class="medida-area-defesa direita"><strong>6m</strong></div>
+            </div>
+            <div class="medida-horizontal"><strong>18m</strong></div>
+            <div class="medida-vertical"><strong>9m</strong></div>
+        </div>
+    </div>
+    <button onclick="mostrarDimensoes()">Mostrar Dimensões</button>
+
+    <script>
+        function mostrarDimensoes() {
+            alert("As dimensões da quadra de voleibol são:\nComprimento: 18m\nLargura: 9m\nÁrea de Ataque: 3m de cada lado da linha central\nÁrea de Defesa: 6m de cada lado\nAltura da Rede: 2.43m (masculino) / 2.24m (feminino)");
+        }
+    </script>
+</body>
+</html>
